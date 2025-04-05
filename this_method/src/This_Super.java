@@ -55,3 +55,4 @@ public class This_Super {
         ChildClass obj2 = new ChildClass(20); // 매개변수 있는 생성자 실행
     }
 }
+ 
