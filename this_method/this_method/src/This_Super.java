@@ -46,7 +46,7 @@ class ChildClass extends ParentClass {
  this와 super는 같이 사용할 수 없음 
   
  */
-public class Tihs_Super { 
+public class This_Super { 
     public static void main(String[] args) {
         System.out.println("=== 첫 번째 객체 생성 ===");
         ChildClass obj1 = new ChildClass(); // 기본 생성자 실행
