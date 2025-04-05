@@ -16,15 +16,26 @@ class ParentClass {
  * 
  */
 class ChildClass extends ParentClass {
-    public ChildClass() {
+
+    public ChildClass() { // 기본 생성자 
         this(10); // ChildClass(int x) 생성자를 호출
         System.out.println("ChildClass 기본 생성자 호출");
+        
     }
 
     public ChildClass(int x) {
         super(x); // ParentClass(int x) 호출
         System.out.println("ChildClass(int x) 생성자 호출");
+        System.out.println("this() 메소드는 같은 클래스의 다른 생성자를 호출할 때 사용 가능함 ");
+        System.out.println("this()로는 일반 메소드를 호출할 수 없음 ");
+        System.out.println("--------------------------");
+        this.childMethod();
     }
+
+    public void childMethod(){
+        System.out.println("this.메소드명()을 이용해서 함수를 호출 할 수 있음");
+    }
+
 }
 
 /*
@@ -32,6 +43,7 @@ class ChildClass extends ParentClass {
   자바에서 public class가 잇는 경우 파일명과 반드시 일치해야함  
  this()  -> this()는 같은 클래스의 생성자를 호출할 때 사용함
  super() -> 상속 관계에서 부모 클래스의 생성자를 호출함.
+ this와 super는 같이 사용할 수 없음 
   
  */
 public class Tihs_Super { 
