@@ -19,11 +19,31 @@ public class StringMethod {
 
     public static void main(String[] args) throws Exception {
 
-        System.out.println("Hello, World!");
+        String str = "2025-04-20 정보처리기사 시험 합격하고 싶어요";
+        //replaceAll
+        String RStr = str.replaceAll("합격하고 싶어요", "합격 기원!!!");
 
-        
+        System.out.println("str.length()적용 " + str.length());
+
+        // concat() 적용
+        String Cstr = str.concat("concat() 적용 ");
+        System.out.println("str.concat()은 문자열을 합성합니다. "+ Cstr);
+
+        // subString
+        // 문자열을 자르며, 인덱스 번호를 넣어서 범위를 지정한다. 
+        // 만약 파라미터를 한 개만 넣을 경우, 해당 인덱스부터 문자열의 마지막까지 자른다. 
+        System.out.println("subString(11)적용 : "+ str.substring(11));
+
+        System.out.println("subString(0,10)적용 : "+ str.substring(0,10));
+
+
+
+
+
+
+
+
     }
-
 
 
 
