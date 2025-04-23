@@ -1,18 +1,63 @@
-## Getting Started
+# 논리 연산자
+-> 논리 연산자 :: 주어진 조건이 참인지 거짓인지 판단하는 데 사용되는 연산자
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+<h1>📌 C언어에서 &&, || 논리 연산자가 처리하는 방식</h1>
+C언어에서 &&나 ||을 사용할 때 "값이 0인지, 0이 아닌지 " 판단함.
 
-## Folder Structure
+**<h2>0이면 : 거짓 (false)</h2>**
+**<h2>0이 아니면 : 참 (true)</h2>**
+즉 값 자체(5, 3 등 구체적인 숫자)가 중요한 게 아닌, 
+**그 숫자가 "0인지, 0이 아닌지"가 중요하다!**
 
-The workspace contains two folders by default, where:
+```
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+    int a = 5;
+    int b = 3;
+    int c = 12;
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+    int t1 ,t2,t3;
+        
+    t1 = a && b;   // 1
+    t2 = a || b;   // 1
+    t3 = !c;       // 0
+    printf("%d", t1 + t2 + t3); // 2 
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+    
+```
 
-## Dependency Management
+<h2>해설 </h2>
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+t1 = a && b;   -> a와 b 둘 다 0이 아니라서, t1의 값은 1이다.
+t2 = a || b;   -> a 또는 b 둘 중 하나가 1이라면, t2의 값은 1이다. 
+t3 = !c;       -> c의 값이 0이 아니라면, true 이지만 , 부정 연산자인 !로 인해서, false인 0이 나온다.
+
+따라서  printf("%d", t1 + t2 + t3);의 결과는 2가 나온다. 
+
+* 중요한 부분 
+
+**<h2>0이면 : 거짓 (false)</h2>**
+**<h2>0이 아니면 : 참 (true)</h2>**
+즉 값 자체(5, 3 등 구체적인 숫자)가 중요한 게 아닌, 
+**그 숫자가 "0인지, 0이 아닌지"가 중요하다!**
+
+
+
+# 비트 연산자 
+-> 2진수로 변환 후 계산 
+not 연산자의 경우 부호 변환 후 -1을 더하는것이 계산하기 편하다. 
+
+```
+        int a = 5;
+        int b = 3;
+        int c = 12;
+
+        int bitOP1 ,bitOP2, bitOP3;
+        bitOP1 = (a & b);
+        bitOP2 = (a | b);
+        bitOP3 = ~c;
+
+        System.out.println("비트연산한 bitOP1의 값 : "  + bitOP1); // 1
+        System.out.println("비트연산한 bitOP2의 값 : "  + bitOP2); // 7
+        System.out.println("비트연산한 bitOP3의 값 : "  + bitOP3); // -13
+
+```
