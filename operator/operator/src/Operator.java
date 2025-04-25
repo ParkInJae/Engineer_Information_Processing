@@ -37,4 +37,3 @@ public class Operator{
         System.out.println("비트연산한 bitOP3의 값 : "  + bitOP3);
     }
 }
-
