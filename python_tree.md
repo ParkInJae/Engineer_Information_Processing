@@ -112,6 +112,51 @@ print(sum_leaves(root))
 
 ```
 
+# 해설 
+트리 구조 
+index : 0   1   2   3   4
+value :10  20  30  40  50
+
+트리 구조:
+         10
+       /    \
+     20      30
+    /  \
+  40   50
+
+
+```
+if not node.children:  
+    return node.value
+```
+
+* node.children -> 현재 노드의 자식 노드들의 리스트를 의미 
+
+// node.childern -> 2가지로 볼 수 있음
+
+ 1) node.children에 자식이 있는 경우  : 파이썬에서 빈 리스트는 False
+
+ 2) node.children에 자식이 없는 경우 : 파이썬에서 원소가 존재하는 리스트는 True 
+
+즉, 해당 코드의 if not node.children: 
+    return node.value는 
+    원소가 존재할 경우에는 not 연산으로 인해 False 처리 되며, 실행되지 않고, 
+    원소가 존재하지 않는 빈 리스트의 경우에는 not 연산으로 인해 True 처리되어, 해당 노드의 원소값을 전달하게 된다. 
+
+
+
+
+```
+return sum(sum_leaves(c) for c in node.children) 
+```
+
+node.children::현재 노드의 자식 노드들의 리스트 
+c :: 리스트의 레벨에 해당하는 노드들
+ 
+따라서 return sum (sum_leaves(c) for c in node.children)을 통해서, 현재 노드의 자식 노드가 존재하는지 존재하지 않는지 확인 후 존재하는 경우 해당 노드를 sum_leaves(c)를 통해 확인하는 재귀함수가 반영된 트리 문제이다. 
+
+
+
 
 <hr>
 <h2> 4번 </h2>
