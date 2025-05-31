@@ -1,3 +1,5 @@
+<h2> 1번 </h2>
+
 ```
 class Node:
     def __init__(self, value):
@@ -22,6 +24,16 @@ li = [4, 7, 1, 9, 3, 5]
 root = build_tree(li)
 print(sum_even_levels(root))
 ```
+
+
+
+# 해설 
+-> li의 처음 인덱스 기준으로 완전 이진 트리를 생성 후 , sum_even_levels를 통해 level % 2 가 0이면 해당 노드의 값들을 더하는 로직
+다라서 0번 2번 레벨의 노드인 , 4 + 9 + 3 + 5 -> 21  정답 
+
+
+<hr>
+<h2> 2번 </h2>
 
 ```
 class Node:
@@ -49,6 +61,32 @@ print(product_odd_levels(root))
 
 ```
 
+# 해설 
+make_tree를 통해 트리를 생성 이때 아래의 코드로 인해서 완전 이진트리의 형태로 생성됨
+
+```  
+nodes[(i - 1) // 2].children.append(nodes[i]) 
+```
+
+또한 하래의 코드로 인해서 , node가 존재하지 않을시에, 1을 반환하며, 트리의 레벨이 1일 경우 해당 노드의 값을 prod에 담으며, 홀수 레벨에서의 prod를 곱한 값을 반환하는 것을 알 수 있다. 
+
+```
+def product_odd_levels(node, level=0):
+    if node is None:
+        return 1
+    prod = node.value if level % 2 == 1 else 1
+    for c in node.children:
+        prod *= product_odd_levels(c, level + 1)
+    return prod
+```
+
+
+따라서 홀수 레벨인 3과 4가 해당이 되며, 3 x 4인 12가 정답이 된다. 
+
+
+<hr>
+<h2> 3번 </h2>
+
 ```
 class Node:
     def __init__(self, value):
@@ -73,6 +111,10 @@ root = gen_tree(li)
 print(sum_leaves(root))
 
 ```
+
+
+<hr>
+<h2> 4번 </h2>
 
 ```
 class Node:
@@ -99,6 +141,9 @@ root = create_tree(data)
 print(find_max(root))
 
 ```
+
+<hr>
+<h2> 5번 </h2>
 
 ```
 from collections import defaultdict
