@@ -1,0 +1,37 @@
+#include <stdio.h>
+ 
+void swap(int a, int b) {
+    int t = a;
+    a = b;
+    b = t;
+}
+ 
+int main() {
+    
+    int a = 11;
+    int b = 19;
+    swap(a, b);
+    
+    switch(a) {
+        case 1:
+            b += 1;
+        case 11:
+            b += 2;
+        default:
+            b += 3;
+        break;
+    }
+    
+    printf("%d", a-b);
+}
+
+
+/*
+해당 문제는 call by reference, call by value에 대한 문제임
+
+call by value에서는 값을 복사해서 사용하기 때문에 기존의 변수에는 영향이 없다.
+
+call by reference에서는 값을 복사하지 않고 실제 변수의 주소를 넘겨주기 때문에, 
+변수에 영향이 있음 
+
+*/
