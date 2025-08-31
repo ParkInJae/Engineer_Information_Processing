@@ -88,27 +88,3 @@ This_Super.class는 그걸 컴파일한 **실행 가능한 클래스 파일**.
 **클래스패스(classpath)**는 Java가 .class 파일을 찾을 때 "어디에서 찾을지" 알려주는 경로 설정
 
 
-
-
-<hr>
-
-## Getting Started
-
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
-
-
